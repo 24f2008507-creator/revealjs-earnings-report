@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Q2 Earnings – Interactive RevealJS Deck</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- RevealJS core CSS from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css" />
+    <!-- Theme (you can change "black" to another built-in theme if you like) -->
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css" id="theme" />
+
+    <!-- Syntax highlighting theme -->
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Slide 1: Title -->
+        <section>
+          <h1>Q2 Earnings Overview</h1>
+          <p>Prepared by the Technical Consulting Team</p>
+          <p>Contact: <strong>24f2008507@ds.study.iitm.ac.in</strong></p>
+
+          <aside class="notes">
+            Introduce yourself, the purpose of this deck, and remind stakeholders that this presentation is
+            interactive and built with RevealJS.
+          </aside>
+        </section>
+
+        <!-- Slide 2: Markdown slide (requirement: at least one slide written in Markdown) -->
+        <section data-markdown>
+          <textarea data-template>
+## Revenue & Profit Highlights (Markdown Slide)
+
+- **Total revenue:** \$2.4B  
+- **Year-over-year growth:** **+12%**  
+- **Net income:** \$410M  
+- **Net margin:** **17%**
+
+This slide is authored directly in **Markdown**, rendered on the fly by RevealJS.
+          </textarea>
+        </section>
+
+        <!-- Slide 3: Animated fragments -->
+        <section>
+          <h2>Key Drivers of Q2 Performance</h2>
+          <ul>
+            <li class="fragment">Stronger net interest income in the retail banking segment</li>
+            <li class="fragment">Increased fee income from wealth management and advisory services</li>
+            <li class="fragment">Improved cost efficiency from technology and process automation</li>
+            <li class="fragment">Lower credit loss provisions due to stable macroeconomic conditions</li>
+          </ul>
+
+          <aside class="notes">
+            Walk through each fragment one by one. Pause briefly on each bullet and provide one
+            concrete data point or example to make it real for stakeholders.
+          </aside>
+        </section>
+
+        <!-- Slide 4: Code sample with syntax highlighting -->
+        <section>
+          <h2>Example: Earnings Analytics Pipeline (Code Sample)</h2>
+          <pre><code class="language-python">
+import pandas as pd
+
+# Load normalized quarterly metrics
+df = pd.read_csv("quarterly_metrics.csv")
+
+# Aggregate by business segment
+segment_summary = (
+    df.groupby("segment")[["revenue", "net_income"]]
+      .sum()
+)
+
+# Compute profit margin per segment
+segment_summary["margin"] = (
+    segment_summary["net_income"] / segment_summary["revenue"]
+)
+
+print(segment_summary.sort_values("margin", ascending=False))
+          </code></pre>
+
+          <aside class="notes">
+            Explain that this simplified Python snippet represents how internal analytics
+            teams aggregate revenue and net income by segment to compute profit margins,
+            which then feed into management dashboards.
+          </aside>
+        </section>
+
+        <!-- Slide 5: Financial math formulas -->
+        <section>
+          <h2>Key Financial Ratios</h2>
+
+          <p>We track profitability and capital efficiency using standard ratios:</p>
+
+          <p>
+            <strong>Return on Equity (ROE)</strong>:
+          </p>
+          <p>
+            $$ \text{ROE} = \frac{\text{Net Income}}{\text{Average Shareholders' Equity}} $$
+          </p>
+
+          <p>
+            <strong>Earnings Per Share (EPS)</strong>:
+          </p>
+          <p>
+            $$ \text{EPS} = \frac{\text{Net Income} - \text{Preferred Dividends}}{\text{Weighted Average Shares Outstanding}} $$
+          </p>
+
+          <aside class="notes">
+            Use this slide to remind stakeholders how ROE and EPS are computed and why small
+            changes in net income or equity can significantly affect these ratios.
+          </aside>
+        </section>
+
+        <!-- Slide 6: Wrap-up & call to action -->
+        <section>
+          <h2>Summary & Next Steps</h2>
+          <ul>
+            <li class="fragment">Q2 delivered solid top-line and bottom-line growth.</li>
+            <li class="fragment">Risk metrics remain within our target ranges.</li>
+            <li class="fragment">
+              We will continue investing in analytics and automation to sustain efficiency gains.
+            </li>
+          </ul>
+
+          <p class="fragment">
+            For questions or follow-up analysis, contact:
+            <strong>24f2008507@ds.study.iitm.ac.in</strong>
+          </p>
+
+          <aside class="notes">
+            Close with an invitation for Q&A and highlight where deeper drill-downs (segment,
+            geography, product) are available in internal dashboards.
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <!-- RevealJS core JS -->
+    <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+
+    <!-- Plugins: Markdown, syntax highlighting, math, notes -->
+    <script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath.KaTeX,
+          RevealNotes,
+        ],
+        math: {
+          // Default KaTeX configuration
+          mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+        }
+      });
+    </script>
+  </body>
+</html>
